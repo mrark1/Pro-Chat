@@ -1,6 +1,11 @@
 import { io } from "socket.io-client";
 
-const SOCKET_URL = "http://localhost:5000";
+const socket = io(
+  import.meta.env.VITE_BACKEND_URL,
+  {
+    autoConnect: false,
+  }
+);
 
 const socket = io(SOCKET_URL, {
   autoConnect: false,
